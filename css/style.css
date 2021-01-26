@@ -1,35 +1,36 @@
 body {
-  height: 100vh;
   background-image: linear-gradient(339deg, rgba(47, 47, 47,0.02) 0%, rgba(47, 47, 47,0.02) 42%,transparent 42%, transparent 99%,rgba(17, 17, 17,0.02) 99%, rgba(17, 17, 17,0.02) 100%),linear-gradient(257deg, rgba(65, 65, 65,0.02) 0%, rgba(65, 65, 65,0.02) 11%,transparent 11%, transparent 92%,rgba(53, 53, 53,0.02) 92%, rgba(53, 53, 53,0.02) 100%),linear-gradient(191deg, rgba(5, 5, 5,0.02) 0%, rgba(5, 5, 5,0.02) 1%,transparent 1%, transparent 45%,rgba(19, 19, 19,0.02) 45%, rgba(19, 19, 19,0.02) 100%),linear-gradient(29deg, rgba(28, 28, 28,0.02) 0%, rgba(28, 28, 28,0.02) 33%,transparent 33%, transparent 40%,rgba(220, 220, 220,0.02) 40%, rgba(220, 220, 220,0.02) 100%),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
   background-repeat: no-repeat;
-  width: 50vw;
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
+.main {
+  max-width: 700px;
+  height: 100vh;
   margin: 0 auto;
+}
+
+.numbers {
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+  font-size: 3rem;
+  color: #a5d7df;
 }
 
 h2 {
   position: relative;
   bottom: 0;
-  font-family: 'M PLUS 1p', sans-serif;
   font-weight: 800;
   font-size: 1.5rem;
   color: #223f6a;
   margin: 50px 0;
-  padding-left: 4.5rem;
+  padding-left: 4.85rem;
   width: fit-content;
 }
 
-h2::before {
-  position: absolute;
-  content: '01';
-  bottom: -14px;
-  left: 0;
-  font-size: 3rem;
-  color: #a5d7df;
-  padding-right: 10px;
-}
-
 h2::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -7px;
@@ -44,6 +45,7 @@ h2::after {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 90px;
 }
 
 .btn-trigger {
@@ -335,13 +337,12 @@ h2::after {
 .nav-container ul li {
   position: relative;
   margin: 0;
-  margin: 30px 10px 3px;
 }
 .nav-container ul li a {
   display: flex;
   position: relative;
   color: #a5d7df;
-  padding: 10px;
+  padding: 40px 20px 8px 10px;
   font-size: 14px;
   text-decoration: none;
   transition: 0.2s;
@@ -364,4 +365,115 @@ h2::after {
 .nav-container {
   left: -15vw;
   width: 15vw;
+}
+
+.btn-hover {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 90px;
+  align-items: center;
+}
+
+.btns {
+  font-weight: 500;
+  padding: 10px 30px;
+  background: #b9e4eb;
+  text-decoration: none;
+  color: #223f6a;
+}
+
+/* btn-fade */
+.btn-fade {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  overflow: hidden;
+  transition-duration: 0.3s;
+  transition-property: color, background-color;
+}
+.btn-fade:hover {
+  background-color: #223f6a;
+  color: #b9e4eb;
+}
+
+/* btn-fade02 */
+.btn-fade02 {
+  background-color: #223f6a;
+  border: 2px solid #223f6a;
+  color: #b9e4eb;
+}
+.btn-fade02:hover {
+  background-color: #ffffff;
+  border-color: #223f6a;
+  color: #223f6a;
+  transition-duration: 0.3s;
+  transition-property: color, background-color, border-color;
+}
+
+/* btn-sweep-to-right */
+.btn-sweep-to-right {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: 0.2s;
+  padding-left: 40px;
+  padding-right: 40px;
+  z-index: 1;
+}
+.btn-sweep-to-right::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #223f6a;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.3s;
+}
+.btn-sweep-to-right:hover {
+  color: #b9e4eb;
+}
+.btn-sweep-to-right:hover::before {
+  transform: scale(1, 1);
+}
+
+/* btn04 */
+.btn04-area {
+  padding: 30px 10px;
+  text-align: center;
+}
+.btn04 {
+  display: inline-block;
+  position: relative;
+  line-height: 1.5;
+  transition: 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: inherit;
+}
+.btn04::before {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 100%;
+  height: 100%;
+  content: '';
+  transition: all 0.3s ease;
+  border: 3px solid #223f6a;
+  box-sizing: inherit;
+}
+.btn04:hover::before {
+  box-sizing: inherit;
+  top: 0;
+  left: 0;
+}
+.btn04-shadow {
+  padding: calc(1.5rem - 16px) 3rem 1.5rem;
+}
+.btn04-shadow:hover {
+  padding: calc(1.5rem - 8px) 3rem;
 }
